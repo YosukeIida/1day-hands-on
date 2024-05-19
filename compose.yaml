@@ -1,0 +1,15 @@
+services:
+  view:
+    container_name: "view"
+    build:
+      context: .
+      dockerfile: .docker/view.Dockerfile
+    volumes:
+      - ./view:/app
+    ports:
+      - "3000:3000"
+    command: sh -c "npm install && npm run dev"
+    environment:
+      - WATCHPACK_POLLING=true    # Hot reload
+    tty: true
+    stdin_open: true
