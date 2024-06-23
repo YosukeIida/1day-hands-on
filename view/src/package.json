@@ -6,7 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "yarn lint --fix",
+    "format": "prettier --write \"./src/**/*.{ts,tsx}\"",
+    "prepare": "cd .. && husky install frontend/.husky",
+    "lint-staged": "lint-staged",
+    "lint:all": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "format:all": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
   },
   "dependencies": {
     "next": "14.2.3",
